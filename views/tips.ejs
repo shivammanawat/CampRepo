@@ -1,0 +1,437 @@
+
+<% include ./partials/header %>
+
+<style>
+  
+.flip-box {
+  background-color: transparent;
+  width: 400px;
+  height: 400px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+}
+
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner {
+  transform: rotateX(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-box-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-box-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateX(180deg);
+}
+   
+
+.zoom {
+    transition: transform .2s; /* Animation */
+   
+    
+}
+
+.zoom:hover {
+    transform: scale(1.1); 
+        
+}
+
+
+    /* The animation code */
+@keyframes myan {
+    0%   {background-color:black;  top:0px;}
+    25%  {background-color:blue; }
+    50%  {background-color:green;}
+    75%  {background-color:black;}
+    100% {background-color:blue; }
+}
+
+/* The element to apply the animation to */
+#a {
+    width: 1000px;
+    height: 5px;
+    background: black;
+    transition: width 0.91s;
+    background-color: green;
+     animation: myan 5s infinite;
+    animation-duration: 4s;
+  
+}
+    
+
+#b{
+  animation-duration: 4s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 40%;
+
+  }
+  to {
+    margin-left: -40%;
+  }
+}
+
+</style>
+
+
+  
+<!-- Slide Show -->
+<section>
+  <img class="mySlides" src="http://i.imgur.com/SBEmFpv.jpg"
+  style="width:100%">
+  <img class="mySlides" src="http://i.imgur.com/2LSMCmJ.jpg"
+  style="width:100%">
+  
+   <img class="mySlides" src="http://i.imgur.com/TVGe0Ef.jpg"
+  style="width:100%">
+  
+   <img class="mySlides" src="http://i.imgur.com/K3mPv14.jpg"
+  style="width:100%">
+  
+  <img class="mySlides" src="http://i.imgur.com/emvhOnb.jpg"
+  style="width:100%">
+</section>
+
+<script>
+// Automatic Slideshow - change image every 3 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 3000);
+}
+</script>
+
+    
+    
+<div class="container" style="font-size:70px; padding:40px;">
+        <blockquote >
+                    <font color=" #104E8B" >
+                         <h1 >
+                          <div class="zoom"> 
+                          I would rather own little & see the world, than own the world and see little of it.
+                          </div>
+                          </h1>
+                  </font> 
+        </blockquote>
+</div>
+
+
+
+<div class="container" style="font-size:36px;padding:40px;">
+    <div class="row">
+      <div class="col-md-6"  style="padding:10px;">
+          <div  style="border: 10px groove grey; ">
+                    <div class="zoom"><img class="img-responsive" style="width:100%;" src="https://cdn.pixabay.com/photo/2015/11/07/11/26/coffee-1031139__340.jpg" >
+                    </div>
+                    <font color=" #104E8B">
+                        <h1 style="text-align:left;">
+                            <blockquote  style="padding-right:5px;"  >
+                              
+                             Time Camping isn’t time spent, it’s invested.
+                             Enjoy your day & make memories !!!
+                         
+                           </blockquote>
+                        </h1> 
+                    </font>
+
+           </div>
+        </div>
+     
+        
+        <div class="col-md-6" style="padding:10px;">
+                    <div  style="height:50;border: 10px groove  grey; ">
+                             <div class="zoom"> <img class="img-responsive"  style="width:100%;" src="https://cdn.pixabay.com/photo/2014/05/03/00/42/vw-camper-336606__340.jpg" >
+                            </div>
+                            <font color=" #104E8B">
+                             <h1 style="text-align:left;">
+                             <blockquote  style="padding-right:5px;" >
+                                    
+                             
+                                 Away is a place where it’s not about the money you spend.It’s about the moments you share.
+                           
+                                                        
+                             </blockquote >
+                              </h1> 
+                           </font>
+                    </div>
+       </div>
+       
+    </div>
+</div>
+
+  <div class="container-fluid">
+<center>
+  
+  <font color=" #104E8B">
+<h2 id="a"></h2>
+<h1 id="b" >Campgrounds activities</h1>
+<h2 id="a"></h2>
+  </font>
+
+
+  <br>
+       <div class="col-md-6  " style=" width:100%;">
+
+  
+               <div id="myCarousel" class="carousel slide" data-ride="carousel" >
+       
+                        <ol class="carousel-indicators">
+                          <li data-target="#myCarousel" data-slide-to="1" class="active" ></li>
+                          <li data-target="#myCarousel" data-slide-to="2" ></li>
+                          <li data-target="#myCarousel" data-slide-to="3"></li>
+                           <li data-target="#myCarousel" data-slide-to="4"></li>
+                           <li data-target="#myCarousel" data-slide-to="5"></li>
+                            <li data-target="#myCarousel" data-slide-to="6"></li>
+                        </ol>
+
+                        <div class="carousel-inner container-fluid" >
+                    
+                              <div class=" container-fluid item active">
+                                <img  src="https://images.pexels.com/photos/1376960/pexels-photo-1376960.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="1" style="width:60%">
+                               
+                              </div>
+                        
+                              <div class="item">
+                                <img src="https://images.pexels.com/photos/14287/pexels-photo-14287.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="2" style="width:60%;">
+                               
+                              </div>
+                            
+                              <div class="item">
+                                <img src="https://images.pexels.com/photos/1061640/pexels-photo-1061640.jpeg?auto=compress&cs=tinysrgb&h=350" alt="3" style="width:60%;">
+                              </div>
+                              
+                               <div class="item">
+                                <img src="https://images.pexels.com/photos/699558/pexels-photo-699558.jpeg?auto=compress&cs=tinysrgb&h=350" alt="4" style="width:60%;">
+                               
+                              </div>
+                              
+                               <div class="item">
+                                <img src="https://images.pexels.com/photos/45241/tent-camp-night-star-45241.jpeg?auto=compress&cs=tinysrgb&h=350" alt="5" style="width:60%;">
+                               
+                              </div>
+                          
+                                <div class="item">
+                                <img src="https://images.pexels.com/photos/221436/pexels-photo-221436.jpeg?auto=compress&cs=tinysrgb&h=350" alt="6" style="width:60%;">
+                              
+                              </div>
+                          
+                                 
+                                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                  <span class="glyphicon glyphicon-chevron-left"></span>
+                                  <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                  <span class="glyphicon glyphicon-chevron-right"></span>
+                                  <span class="sr-only">Next</span>
+                                </a>
+                        </div>
+                 </div>
+
+         
+  </div>
+
+      </center></div>
+
+  
+      
+<div class="container" style="height:50px;font-size:70px; padding:40px;">
+        <blockquote>
+                    <font color=" #104E8B" >
+                         <h1 >
+                          <div  class="zoom"> 
+                            Wander often, wander always. Because not all who wander are lost.
+                            </div>
+                          </h1>
+                  </font> 
+        </blockquote>
+</div>
+     
+       <!--<div class="flip-box" >-->
+       <!--       <div class="flip-box-inner">-->
+       <!--         <div class="flip-box-back">-->
+       <!--           <img src="https://gorving.com/_assets/_images/rv-parks/parkscampgrounds_hero.jpg" alt="4" style="width:150%;">-->
+       <!--         </div>-->
+       <!--         <div class="flip-box-front">-->
+       <!--            <img src="https://www.reserveamerica.com/marketing/html/acm/__shared/assets/Tent_Subject_Main2294.jpg" alt="4" style="width:150%;">-->
+       <!--         </div>-->
+       <!--       </div>-->
+       <!--     </div>-->
+
+<div class="row" style="margin-top:100px;padding:40px;">
+    <div class="col-md-6">
+   
+                <div class="flip-box" >
+              <div class="flip-box-inner">
+                <div class="flip-box-back">
+                  <img src="https://images.pexels.com/photos/450441/pexels-photo-450441.jpeg?auto=compress&cs=tinysrgb&h=350" alt="4" style="width:150%;">
+                </div>
+                <div class="flip-box-front">
+                   <img src="https://images.pexels.com/photos/297642/pexels-photo-297642.jpeg?auto=compress&cs=tinysrgb&h=350" alt="4" style="width:150%;">
+                </div>
+              </div>
+            </div>
+    </div>
+   <div class="col-md-6">
+   
+                <div class="flip-box" >
+              <div class="flip-box-inner">
+                <div class="flip-box-front">
+                  <img src="https://images.pexels.com/photos/1266009/pexels-photo-1266009.jpeg?auto=compress&cs=tinysrgb&h=350" alt="4" style="width:150%;">
+                </div>
+                <div class="flip-box-back">
+                   <img src="https://images.pexels.com/photos/1246955/pexels-photo-1246955.jpeg?auto=compress&cs=tinysrgb&h=350" alt="4" style="width:150%;">
+                </div>
+              </div>
+            </div>
+    </div>
+</div>
+
+
+
+<style>
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+</style>
+
+
+
+<button class="collapsible">Open Collapsible</button>
+<div class="content">
+ 
+<div class="container" style="height:20;font-size:26px;padding:20px;margin:100px">
+    <div class="row">
+        
+       <div class="col-md-3 "  style="padding:10px;">
+                <img src="http://rvcoutdoors.com/wp-content/uploads/2014/02/camping-lamp-hack.jpg" width="250" height="250" style="margin:3px;border: 7px groove grey;">
+                <img src="http://rvcoutdoors.com/wp-content/uploads/2014/02/bread-making-while-camping.jpg" width="250" height="250" style="margin:3px;border: 7px groove grey;">
+                <img src="http://rvcoutdoors.com/wp-content/uploads/2014/02/posion-ivy.jpg" width="250" height="250" style="margin:3px; border: 7px groove grey;">
+                <img src="http://rvcoutdoors.com/wp-content/uploads/2014/02/natural-tick-repellent.jpg" width="250" height="250"  style="margin:3px;border: 7px groove grey;">
+                <img src="http://rvcoutdoors.com/wp-content/uploads/2014/02/matches-camping-tips.jpg" width="250" height="250"  style="margin:3px;border: 7px groove grey;">
+                <img src="http://rvcoutdoors.com/wp-content/uploads/2014/02/camping-hacks.jpg" width="250" height="250"  style="margin:3px;border: 7px groove grey;">
+                <img src="http://rvcoutdoors.com/wp-content/uploads/2014/02/camping-tips-for-2014.jpg"width="250" height="250"  style="margin:3px;border: 7px groove grey;">
+                <img src="http://rvcoutdoors.com/wp-content/uploads/2014/02/camping-spice-tip.jpg"width="250" height="250"  style="margin:3px;border: 7px groove grey;">
+               
+        </div>
+        <div class="col-md-6" style="paddingleft:5px;" >
+             <font color=" #104E8B " >
+                 <h1 class="lead caption" style="font-size:45px;" >20 Useful Camping Tips</h1>
+                 <div class="list-group">
+                          
+                            <li  style="padding:0px;font-size:35px;">Point a head lamp into a jug of water for an instant lantern.</li>
+                            <li  style="padding:0px;font-size:35px;">Make tin-can sandwich bread as a portable food option.</li>
+                            <li  style="padding:0px;font-size:35px;"> Bring a tick deterrent.</li>
+                            <li  style="padding:0px;font-size:35px;"> Glue sandpaper to the top of your match holder.</li>
+                            <li  style="padding:0px;font-size:35px;"> Repurpose a coffee can to hold and protect TP.</li>
+                            <li  style="padding:0px;font-size:35px;"> Make crescent rolls over the campfire.</li>
+                            <li  style="padding:0px;font-size:35px;"> Use Tic-Tac boxes to store spices.</li>
+                            <li  style="padding:0px;font-size:35px;"> Get these seat hammocks for car camping.</li>
+                            <li  style="padding:0px;font-size:35px;"> Make travel coffee bags out of coffee filters and dental floss.</li>
+                            <li  style="padding:0px;font-size:35px;">Need you coffee while hiking? Bring a few of these.</li>
+                            <li  style="padding:0px;font-size:35px;">Make candle stakes for romantic nighttime lighting.</li>
+                            <li  style="padding:0px;font-size:35px;">Use an empty laundry detergent dispenser as a hand-washing station.</li>
+                            <li  style="padding:0px;font-size:35px;">Make campfire cones!</li>
+                            <li  style="padding:0px;font-size:35px;">Pack a mini first-aid kit into an old prescription bottle or Altoids tin.</li>
+                            <li  style="padding:0px;font-size:35px;"> Make an easy-to-carry fire starter with a cardboard-only egg carton and match light charcoal.</li>
+                            <li  style="padding:0px;font-size:30px;"> Make pocket-sized oil lamps out of travel-size or hotel toiletry shampoo bottles.</li>
+                            <li  style="padding:0px;font-size:30px;">Skip the meat marinade and put the rosemary right on the coals.</li>
+                            <li  style="padding:0px;font-size:30px;"> Add bundles of sage to a campfire to keep away mosquitoes away.    </li>
+                           
+                </div>
+                </font>
+         </div>
+        <div class="col-md-3"  style="margin:auto;padding:10px;">
+              
+                 <img src="http://rvcoutdoors.com/wp-content/uploads/2014/02/coffee-camping-tips.jpg"width="250" height="250" style="margin:3px;border: 7px groove grey;">
+                 <img src="http://rvcoutdoors.com/wp-content/uploads/2014/02/coffee-while-camping.jpg" width="250" height="250" style="margin:3px;border: 7px groove grey;">
+                 <img src="http://rvcoutdoors.com/wp-content/uploads/2014/02/camping-hand-washer.jpg" width="250" height="250" style="margin:3px;border: 7px groove grey;">
+                 <img src="http://rvcoutdoors.com/wp-content/uploads/2014/02/campfire-cones.jpg"width="250" height="250" style="margin:3px;border: 7px groove grey;">
+                 <img src="http://rvcoutdoors.com/wp-content/uploads/2014/02/camping-first-aid-kit.jpg" width="250" height="250" style="margin:3px;border: 7px groove grey;">
+                 <img src="http://rvcoutdoors.com/wp-content/uploads/2014/02/campfire-starters.jpg" width="250" height="250" style="margin:3px;border: 7px groove grey;">
+                 <img src="http://rvcoutdoors.com/wp-content/uploads/2014/02/pocket-sized-oil-lamp.jpg" width="250" height="250" style="margin:3px;border: 7px groove grey;">
+                 <img src="http://rvcoutdoors.com/wp-content/uploads/2014/02/keep-mosquitoes-away.jpg" width="250" height="250" style="margin:3px;border: 7px groove grey;">
+               
+         </div>
+         
+     </div>
+</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+
+
+
+<% include ./partials/footer %>

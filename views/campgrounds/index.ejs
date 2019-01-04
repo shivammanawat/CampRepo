@@ -1,0 +1,95 @@
+<% include ../partials/header %>
+
+<style>
+      
+    .parallax1 
+    {
+    background-image: url("https://cdn.pixabay.com/photo/2017/10/10/22/24/creux-du-van-2839090__340.jpg");
+    min-height: 600px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ 
+    }
+h1{
+   
+   
+    position: relative;
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 10s;
+    
+    animation-iteration-count: infinite;
+}
+
+
+/* Standard syntax */
+@keyframes example {
+    0%   {left:0px; top:0px;}
+    100% {left:300px; top:0px;}
+ 
+}
+
+h7{
+    position: relative;
+    animation-name: example;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+
+/* Standard syntax */
+@keyframes example {
+    0%   {left:0px; top:0px;}
+    25% {left:100px; top:0px;}
+ 
+}
+
+</style>
+
+    <div class="parallax1" style="margin:0px;">
+   <header >
+        <div class="container" style="padding:60px;padding-left:110px;">
+            <h1>Welcome To YelpCamp!</h1>
+            <h7>View our hand-picked campgrounds from all over the world</h7>
+            <p>
+                <a class="btn btn-primary btn-large" href="/campgrounds/new">Add New Campground</a>
+            </p>
+        </div>
+    </header>
+
+    </div>
+    
+
+<div class="container" style="padding:40px;">
+   
+<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% campgrounds.forEach(function(campground){ %>
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <img src="<%= campground.image %>">
+                <div class="caption">
+                    <h4><%= campground.name %></h4>
+                    <% if (campground.rating === 0) { %>
+                    <em>No reviews yet.</em>
+                    <% } else { %>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star <% if (campground.rating > 1.5) { %> checked <% } %>"></span>
+                    <span class="fa fa-star <% if (campground.rating > 2.5) { %> checked <% } %>"></span>
+                    <span class="fa fa-star <% if (campground.rating > 3.5) { %> checked <% } %>"></span>
+                    <span class="fa fa-star <% if (campground.rating > 4.5) { %> checked <% } %>"></span>
+                    <% } %>
+                </div>
+                <p>
+                    <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More Info</a>
+                </p>
+            </div>
+        </div>
+        <% }); %>
+    </div>
+    
+</div>
+
+<% include ../partials/footer %>

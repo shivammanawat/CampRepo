@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CAMPCHAMP</title>
+
+
+  <meta charset="utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/stylesheets/main.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-git2.min.js"></script>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+
+
+        
+<style>
+
+
+#navbar {
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: block;
+  transition: top 0.3s;
+    overflow: hidden;
+   z-index:100;
+}
+
+
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+         body
+ {
+     background-color:#f5fffa;
+ }
+
+
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
+
+
+</style>
+</head>
+<body>
+
+
+
+  <nav class="navbar navbar-default " id="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/" style="color:green;">YelpCamp</a>
+          
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a class="active" href="/homepage" style="color:green;">Home</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                          <% if(!currentUser){ %> 
+                        
+                        <li><a href="/login" style="color:green;">Login</a></li>
+                        <li><a href="/register" style="color:green;">Sign Up</a></li>
+                    <% } else { %>
+                        <li><a href="/profile" style="color:green;text-decoration-line: overline underline; text-decoration-style: wavy;" >Welcome <%= currentUser.username %></a></li>
+                        <li><a href="/campgrounds" style="color:green;" >Campgrounds</a></li>
+ 
+                        <li><a href="/logout"  style="color:green;">Logout</a></li>
+                    <% } %>
+                        
+                    </ul>
+            </div>
+            
+            
+        </div>
+    </nav>
+    
+    <div class="container">
+       <% if(error && error.length > 0) { %>
+         <div class="alert alert-danger"><p><%=error %></p></div>
+       <% } %>
+       
+       <% if(success && success.length > 0) { %>
+         <div class="alert alert-success"><p><%= success %></p></div>
+       <% } %>
+    </div>
+
+    
+
+<script>
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-150px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+</script>
+<br>
+<br>

@@ -1,0 +1,22 @@
+
+<% include ./partials/header %>
+<% var campground  = require("./models/campground"); %>
+<div class="jumbotron">
+    
+    
+    <div class="thumbnail">
+                <img class="img-responsive" src="<%= campground.image %>">
+                <div class="caption-full">
+                   
+                    <h4><a><%=campground.name%></a></h4>
+                    <p><%= campground.description %></p>
+                    <p>
+                        <em>Submitted By <%= campground.author.username %></em>
+                    </p>
+                   
+                </div>
+    </div>
+    
+</div>
+
+<% include ./partials/footer %>

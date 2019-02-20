@@ -19,4 +19,4 @@ To check the website without downloading visit this link
 
 >>LINK<<
 
-https://salty-refuge-41314.herokuapp.com/
+https://campchampcamp.herokuapp.com/
